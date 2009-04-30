@@ -1,0 +1,25 @@
+Second hunk: SOL_IPV6 will be defined in 1.7.0-47.
+
+--- origsrc/libnice-0.0.6/agent/interfaces.c	2009-03-09 15:34:55.000000000 -0500
++++ src/libnice-0.0.6/agent/interfaces.c	2009-04-26 15:23:03.967125000 -0500
+@@ -44,7 +44,9 @@
+ #endif
+ 
+ #include <net/if.h>
++#ifndef __CYGWIN__
+ #include <net/if_arp.h>
++#endif
+ #include <arpa/inet.h>
+ 
+ #ifdef HAVE_GETIFADDRS
+--- origsrc/libnice-0.0.6/stun/tools/stund.c	2009-03-09 15:34:55.000000000 -0500
++++ src/libnice-0.0.6/stun/tools/stund.c	2009-04-26 15:21:25.748375000 -0500
+@@ -58,6 +58,8 @@
+ 
+ #ifndef SOL_IP
+ # define SOL_IP IPPROTO_IP
++#endif
++#ifndef SOL_IPV6
+ # define SOL_IPV6 IPPROTO_IPV6
+ #endif
+ 
