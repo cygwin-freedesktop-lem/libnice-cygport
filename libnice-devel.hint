@@ -1,5 +1,5 @@
 category: Net
-requires: cygwin libnice0 libglib2.0-devel
+requires: libnice0 libglib2.0-devel
 external-source: libnice
 sdesc: "GLib-based ICE library (development)"
 ldesc: "Libnice is an implementation of the IETF's draft Interactice 
