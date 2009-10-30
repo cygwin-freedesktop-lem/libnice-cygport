@@ -11,3 +11,5 @@ gstreamer0_10_plugins_nice_CONTENTS="usr/lib/gstreamer-0.10/"
 libnice0_CONTENTS="usr/bin/cygnice-0.dll usr/share/doc/"
 libnice_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 PKG_IGNORE="usr/bin/stun*"
+
+DIFF_EXCLUDES="libnice.types"

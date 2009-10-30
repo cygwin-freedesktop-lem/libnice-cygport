@@ -7,20 +7,20 @@ that want to establish peer-to-peer UDP data streams. It automates the
 process of traversing NATs and provides security against some attacks.
 
 Runtime requirements:
-  cygwin-1.7.0-45
-  libgcc1-4.3.2-2
-  libglib2.0_0-2.20.1-1
-  libgstreamer0.10_0-0.10.22-10
+  cygwin-1.7.0-62
+  libgcc1-4.3.4-1
+  libglib2.0_0-2.22.2-1
+  libgstreamer0.10_0-0.10.24-1
 
 Build requirements:
 (besides corresponding -devel packages)
   autoconf2.5-2.63-10
   automake1.10-1.10.1-10
-  binutils-20080624-2
-  cygport-0.9.6-1
-  gawk-3.1.6-2
-  gcc4-core-4.3.2-2
-  libtool-2.2.7a-12
+  binutils-2.19.51-1
+  cygport-0.9.10-1
+  gawk-3.1.7-1
+  gcc4-core-4.3.4-1
+  libtool-2.2.7a-14
   make-3.81-2
   pkg-config-0.23b-10
   sed-4.1.5-2
@@ -34,90 +34,24 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack libnice-0.0.6-X-src.tar.bz2
+  unpack libnice-0.0.9-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./libnice-0.0.6-X.cygport all
+  cygport ./libnice-0.0.9-X.cygport all
 
 This will create:
-  /usr/src/gstreamer0.10-plugins-nice-0.0.6-X.tar.bz2
-  /usr/src/libnice-0.0.6-X-src.tar.bz2
-  /usr/src/libnice-devel-0.0.6-X.tar.bz2
-  /usr/src/libnice0-0.0.6-X.tar.bz2
+  /usr/src/gstreamer0.10-plugins-nice-0.0.9-X.tar.bz2
+  /usr/src/libnice-0.0.9-X-src.tar.bz2
+  /usr/src/libnice-devel-0.0.9-X.tar.bz2
+  /usr/src/libnice0-0.0.9-X.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
-
-(libnice0)
-  /usr/bin/cygnice-0.dll
-  /usr/share/doc/libnice/AUTHORS
-  /usr/share/doc/libnice/COPYING
-  /usr/share/doc/libnice/NEWS
-  /usr/share/doc/libnice/README
-
-(libnice-devel)
-  /usr/include/nice/address.h
-  /usr/include/nice/agent.h
-  /usr/include/nice/candidate.h
-  /usr/include/nice/debug.h
-  /usr/include/nice/http.h
-  /usr/include/nice/interfaces.h
-  /usr/include/nice/nice.h
-  /usr/include/nice/pseudossl.h
-  /usr/include/nice/socket.h
-  /usr/include/nice/socks5.h
-  /usr/include/nice/tcp-bsd.h
-  /usr/include/nice/tcp-turn.h
-  /usr/include/nice/turn.h
-  /usr/include/nice/udp-bsd.h
-  /usr/include/stun/constants.h
-  /usr/include/stun/debug.h
-  /usr/include/stun/stunagent.h
-  /usr/include/stun/stunmessage.h
-  /usr/include/stun/usages/bind.h
-  /usr/include/stun/usages/ice.h
-  /usr/include/stun/usages/timer.h
-  /usr/include/stun/usages/turn.h
-  /usr/include/stun/win32_common.h
-  /usr/lib/libnice.dll.a
-  /usr/lib/libnice.la
-  /usr/lib/pkgconfig/nice.pc
-  /usr/share/gtk-doc/html/libnice/NiceAgent.html
-  /usr/share/gtk-doc/html/libnice/ch01.html
-  /usr/share/gtk-doc/html/libnice/ch02.html
-  /usr/share/gtk-doc/html/libnice/ch03.html
-  /usr/share/gtk-doc/html/libnice/ch04.html
-  /usr/share/gtk-doc/html/libnice/home.png
-  /usr/share/gtk-doc/html/libnice/index.html
-  /usr/share/gtk-doc/html/libnice/index.sgml
-  /usr/share/gtk-doc/html/libnice/left.png
-  /usr/share/gtk-doc/html/libnice/libnice-Bind.html
-  /usr/share/gtk-doc/html/libnice/libnice-Debug-messages.html
-  /usr/share/gtk-doc/html/libnice/libnice-ICE.html
-  /usr/share/gtk-doc/html/libnice/libnice-Network-interfaces-discovery.html
-  /usr/share/gtk-doc/html/libnice/libnice-NiceAddress.html
-  /usr/share/gtk-doc/html/libnice/libnice-NiceCandidate.html
-  /usr/share/gtk-doc/html/libnice/libnice-StunAgent.html
-  /usr/share/gtk-doc/html/libnice/libnice-StunMessage.html
-  /usr/share/gtk-doc/html/libnice/libnice-TURN.html
-  /usr/share/gtk-doc/html/libnice/libnice-Timer.html
-  /usr/share/gtk-doc/html/libnice/libnice.devhelp
-  /usr/share/gtk-doc/html/libnice/libnice.devhelp2
-  /usr/share/gtk-doc/html/libnice/pt01.html
-  /usr/share/gtk-doc/html/libnice/pt02.html
-  /usr/share/gtk-doc/html/libnice/right.png
-  /usr/share/gtk-doc/html/libnice/style.css
-  /usr/share/gtk-doc/html/libnice/up.png
-
-(gstreamer0.10-plugins-nice)
-  /usr/lib/gstreamer-0.10/cyggstnice.dll
-  /usr/lib/gstreamer-0.10/libgstnice.la
-
-------------------
-
 Port Notes:
+
+----- version 0.0.9-1 -----
+Version bump.
 
 ----- version 0.0.6-1 -----
 Initial release for Cygwin 1.7.
