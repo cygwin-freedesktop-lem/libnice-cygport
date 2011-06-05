@@ -1,5 +1,5 @@
 category: Net
-requires: libgcc1 libglib2.0_0
+requires: libglib2.0_0
 external-source: libnice
 sdesc: "GLib-based ICE library (runtime)"
 ldesc: "Libnice is an implementation of the IETF's draft Interactice 

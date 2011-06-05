@@ -6,9 +6,9 @@ SRC_URI="http://nice.freedesktop.org/releases/${P}.tar.gz"
 PATCH_URI="0.0.6-cygwin17.patch
            0.0.6-no-undefined.patch"
 
-PKG_NAMES="${PN} ${PN}0 ${PN}-devel gstreamer0.10-plugins-nice"
-gstreamer0_10_plugins_nice_CONTENTS="usr/lib/gstreamer-0.10/"
-libnice0_CONTENTS="usr/bin/cygnice-0.dll usr/share/doc/"
+PKG_NAMES="${PN}10 ${PN}-devel gstreamer0.10-plugins-nice"
+gstreamer0_10_plugins_nice_CONTENTS="usr/lib/gstreamer-0.10/ usr/share/doc/"
+libnice10_CONTENTS="usr/bin/cygnice-10.dll"
 libnice_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 PKG_IGNORE="usr/bin/stun*"
 
