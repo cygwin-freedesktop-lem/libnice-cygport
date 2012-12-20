@@ -1,9 +1,0 @@
-category: Net
-requires: libglib2.0_0
-external-source: libnice
-sdesc: "GLib-based ICE library (runtime)"
-ldesc: "Libnice is an implementation of the IETF's draft Interactice 
-Connectivity Establishment standard (ICE). It provides GLib-based 
-library, libnice and GStreamer elements. ICE is useful for applications 
-that want to establish peer-to-peer UDP data streams. It automates the 
-process of traversing NATs and provides security against some attacks."

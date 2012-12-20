@@ -1,0 +1,28 @@
+--- origsrc/libnice-0.1.3/gst/Makefile.am	2012-09-14 11:28:35.000000000 -0500
++++ src/libnice-0.1.3/gst/Makefile.am	2012-12-19 22:40:06.757687000 -0600
+@@ -33,7 +33,7 @@ libgstnice_la_SOURCES = \
+ 
+ libgstnice_la_LIBADD = 	$(COMMON_LIBADD) $(GST_LIBS)
+ 
+-libgstnice_la_LDFLAGS = -module -avoid-version
++libgstnice_la_LDFLAGS = -module -avoid-version -no-undefined
+ endif
+ 
+ 
+@@ -52,5 +52,5 @@ libgstnice010_la_SOURCES = \
+ 
+ libgstnice010_la_LIBADD = $(COMMON_LIBADD) $(GST010_LIBS)
+ 
+-libgstnice010_la_LDFLAGS = -module -avoid-version
++libgstnice010_la_LDFLAGS = -module -avoid-version -no-undefined
+ endif
+--- origsrc/libnice-0.0.6/nice/Makefile.am	2009-03-09 15:34:55.000000000 -0500
++++ src/libnice-0.0.6/nice/Makefile.am	2009-04-26 15:15:27.889288200 -0500
+@@ -21,6 +21,7 @@ libnice_la_LIBADD = \
+ 
+ libnice_la_LDFLAGS = \
+ 	-export-symbols $(srcdir)/libnice.sym \
++	-no-undefined \
+ 	$(LIBNICE_LT_LDFLAGS)
+ 
+ 
