@@ -5,7 +5,7 @@ VERSION=0.1.8
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GLib-based ICE library"
-DESCRIPTION="Libnice is an implementation of the IETF's draft Interactice
+DESCRIPTION="Libnice is an implementation of the IETF's draft Interactive
 Connectivity Establishment standard (ICE). It provides GLib-based library,
 libnice and GStreamer elements. ICE is useful for applications that want to
 establish peer-to-peer UDP data streams. It automates the process of traversing
