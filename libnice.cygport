@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="libnice"
-VERSION=0.1.8
+VERSION=0.1.13
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GLib-based ICE library"
@@ -13,12 +13,10 @@ NATs and provides security against some attacks."
 HOMEPAGE="http://nice.freedesktop.org/"
 SRC_URI="http://nice.freedesktop.org/releases/${NAME}-${VERSION}.tar.gz"
 PATCH_URI="
-	0.1.3-no-undefined.patch
 	0.1.8-introspection.patch
 "
 
-PKG_NAMES="${NAME}10 ${NAME}-devel ${NAME}-doc girepository-Nice0.1 gstreamer0.10-plugins-nice gstreamer1.0-plugins-nice"
-gstreamer0_10_plugins_nice_CONTENTS="usr/lib/gstreamer-0.10/"
+PKG_NAMES="${NAME}10 ${NAME}-devel ${NAME}-doc girepository-Nice0.1 gstreamer1.0-plugins-nice"
 gstreamer1_0_plugins_nice_CONTENTS="usr/lib/gstreamer-1.0/"
 libnice10_DOCS="AUTHORS COPYING NEWS README TODO"
 libnice10_CONTENTS="usr/bin/cygnice-10.dll"
@@ -29,3 +27,5 @@ girepository_Nice0_1_CONTENTS="usr/*/gir*-1.0/Nice-0.1.*"
 PKG_IGNORE="usr/bin/stun*"
 
 DIFF_EXCLUDES="libnice.types"
+
+CYGCONF_ARGS="--with-gstreamer --without-gstreamer-0.10"
