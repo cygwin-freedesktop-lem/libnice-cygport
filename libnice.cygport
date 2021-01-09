@@ -1,7 +1,7 @@
-inherit gnome2
+inherit gnome2 meson
 
 NAME="libnice"
-VERSION=0.1.13
+VERSION=0.1.18
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GLib-based ICE library"
@@ -10,22 +10,59 @@ Connectivity Establishment standard (ICE). It provides GLib-based library,
 libnice and GStreamer elements. ICE is useful for applications that want to
 establish peer-to-peer UDP data streams. It automates the process of traversing
 NATs and provides security against some attacks."
-HOMEPAGE="http://nice.freedesktop.org/"
-SRC_URI="http://nice.freedesktop.org/releases/${NAME}-${VERSION}.tar.gz"
-PATCH_URI="
-	0.1.8-introspection.patch
+HOMEPAGE="https://libnice.freedesktop.org/"
+
+
+source freedesktop.sub.experimental
+
+# Set SRC_URI and SRC_DIR
+freedesktop_setup "${NAME}" "${VERSION}"
+#freedesktop_setup "${NAME}" "@master"
+
+SRC_URI+="
+  freedesktop.sub.experimental
 "
 
-PKG_NAMES="${NAME}10 ${NAME}-devel ${NAME}-doc girepository-Nice0.1 gstreamer1.0-plugins-nice"
-gstreamer1_0_plugins_nice_CONTENTS="usr/lib/gstreamer-1.0/"
-libnice10_DOCS="AUTHORS COPYING NEWS README TODO"
-libnice10_CONTENTS="usr/bin/cygnice-10.dll"
-libnice_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
-libnice_doc_CATEGORY="Doc"
-libnice_doc_CONTENTS="usr/share/gtk-doc/"
-girepository_Nice0_1_CONTENTS="usr/*/gir*-1.0/Nice-0.1.*"
-PKG_IGNORE="usr/bin/stun*"
+BUILD_REQUIRES="\
+  meson\
+  pkg-config\
+  gobject-introspection\
+  gtk-doc\
+  libgirepository1.0-devel\
+  libglib2.0-devel\
+  libgnutls-devel\
+  libgstreamer1.0-devel\
+  libssl-devel\
+"
+
+# We have no GUPnP package in Cygwin distribution at present (2021-01-06)
+# [GUPnP]: https://wiki.gnome.org/Projects/GUPnP
+CYGMESON_ARGS="
+  -Dgupnp=disabled
+  -Dgtk_doc=enabled
+"
 
 DIFF_EXCLUDES="libnice.types"
 
-CYGCONF_ARGS="--with-gstreamer --without-gstreamer-0.10"
+ABI=10
+
+PKG_NAMES="${NAME}${ABI} ${NAME}-devel ${NAME}-doc girepository-Nice0.1 gstreamer1.0-plugins-nice"
+gstreamer1_0_plugins_nice_CONTENTS="usr/lib/gstreamer-1.0/*.dll"
+printf -v "libnice${ABI}_DOCS" "%s" "AUTHORS COPYING NEWS README TODO"
+printf -v "libnice${ABI}_CONTENTS" "%s" "usr/bin/cygnice-${ABI}.dll"
+libnice_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+libnice_doc_CATEGORY="Doc"
+libnice_doc_CONTENTS="usr/share/doc/libnice/ usr/share/gtk-doc/"
+girepository_Nice0_1_CONTENTS="usr/*/gir*-1.0/Nice-0.1.*"
+PKG_IGNORE="
+  usr/bin/stun*
+  usr/lib/gstreamer-1.0/*.dll.a
+"
+
+src_test() {
+  cd ${S}
+  meson test -C ${CHOST} \
+    --no-rebuild --print-errorlogs \
+    --timeout-multiplier=4
+  # Timeout multiplier is set, so that even slow machines can pass the tests.
+}
