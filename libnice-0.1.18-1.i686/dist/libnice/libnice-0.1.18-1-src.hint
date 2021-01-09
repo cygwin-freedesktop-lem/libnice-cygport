@@ -1,0 +1,11 @@
+category: Libs
+build-depends: cygport   meson  pkg-config  gobject-introspection  gtk-doc  libgirepository1.0-devel  libglib2.0-devel  libgnutls-devel  libgstreamer1.0-devel  libssl-devel
+sdesc: "GLib-based ICE library"
+ldesc: "Libnice is an implementation of the IETF's draft Interactive
+Connectivity Establishment standard (ICE). It provides GLib-based library,
+libnice and GStreamer elements. ICE is useful for applications that want to
+establish peer-to-peer UDP data streams. It automates the process of traversing
+NATs and provides security against some attacks."
+skip:
+test:
+homepage: https://libnice.freedesktop.org/
