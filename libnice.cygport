@@ -59,6 +59,11 @@ PKG_IGNORE="
   usr/lib/gstreamer-1.0/*.dll.a
 "
 
+src_compile() {
+  cygmeson ${@}
+  cygninja -C ${CHOST} -j 1
+}
+
 src_test() {
   cd ${S}
   meson test -C ${CHOST} \
