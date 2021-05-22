@@ -28,6 +28,7 @@ BUILD_REQUIRES="\
   pkg-config\
   gobject-introspection\
   gtk-doc\
+  graphviz\
   libgirepository1.0-devel\
   libglib2.0-devel\
   libgnutls-devel\
