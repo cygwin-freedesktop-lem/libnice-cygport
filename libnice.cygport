@@ -34,6 +34,17 @@ BUILD_REQUIRES="\
   libgnutls-devel\
   libgstreamer1.0-devel\
   libssl-devel\
+  python38\
+  python38-babel\
+  python38-cffi\
+  python38-chardet\
+  python38-imaging\
+  python38-libxml2\
+  python38-mako\
+  python38-olefile\
+  python38-ply\
+  python38-pycparser\
+  python38-pygments\
 "
 
 # We have no GUPnP package in Cygwin distribution at present (2021-01-06)
