@@ -12,6 +12,10 @@ establish peer-to-peer UDP data streams. It automates the process of traversing
 NATs and provides security against some attacks."
 HOMEPAGE="https://libnice.freedesktop.org/"
 
+LICENSE="MPL-1.1 AND LGPL-2.1-or-later"
+# cf. https://www.cygwin.com/packaging-hint-files.html#pvr-src.hint
+#     https://spdx.org/licenses/MPL-1.1.html
+#     https://spdx.org/licenses/LGPL-2.1-or-later.html
 
 source freedesktop.sub.experimental
 
