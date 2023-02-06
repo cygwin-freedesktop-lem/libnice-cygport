@@ -75,15 +75,15 @@ PKG_IGNORE="
   usr/lib/gstreamer-1.0/*.dll.a
 "
 
-src_compile() {
-  cygmeson ${@}
-  cygninja -C ${CHOST} -j 1
-}
+# src_compile() {
+#   cygmeson ${@}
+#   cygninja -C ${CHOST} -j 1
+# }
 
-src_test() {
-  cd ${S}
-  meson test -C ${CHOST} \
-    --no-rebuild --print-errorlogs \
-    --timeout-multiplier=4
-  # Timeout multiplier is set, so that even slow machines can pass the tests.
-}
+# src_test() {
+#   cd ${S}
+#   meson test -C ${CHOST} \
+#     --no-rebuild --print-errorlogs \
+#     --timeout-multiplier=4
+#   # Timeout multiplier is set, so that even slow machines can pass the tests.
+# }
