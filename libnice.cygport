@@ -1,7 +1,7 @@
 inherit gnome2 meson
 
 NAME="libnice"
-VERSION=0.1.19
+VERSION=0.1.21
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="GLib-based ICE library"
