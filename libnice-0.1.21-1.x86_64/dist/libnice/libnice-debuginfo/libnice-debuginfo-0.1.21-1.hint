@@ -1,0 +1,7 @@
+category: Debug
+requires: cygwin-debuginfo
+external-source: libnice
+sdesc: "Debug info for libnice"
+ldesc: "This package contains files necessary for debugging the
+libnice package with gdb."
+

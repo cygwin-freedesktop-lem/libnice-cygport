@@ -1,0 +1,12 @@
+category: Libs
+build-depends: cygport meson pkg-config gobject-introspection gtk-doc graphviz libgirepository1.0-devel libglib2.0-devel libgnutls-devel libgstreamer1.0-devel libssl-devel python39 python39-babel python39-cffi python39-chardet python39-imaging python39-libxml2 python39-mako python39-olefile python39-ply python39-pycparser python39-pygments
+sdesc: "GLib-based ICE library"
+ldesc: "Libnice is an implementation of the IETF's draft Interactive
+Connectivity Establishment standard (ICE). It provides GLib-based library,
+libnice and GStreamer elements. ICE is useful for applications that want to
+establish peer-to-peer UDP data streams. It automates the process of traversing
+NATs and provides security against some attacks."
+skip:
+
+homepage: https://libnice.freedesktop.org/
+license: MPL-1.1 AND LGPL-2.1-or-later

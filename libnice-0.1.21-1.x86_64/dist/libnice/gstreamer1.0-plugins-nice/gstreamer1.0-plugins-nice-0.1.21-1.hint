@@ -1,0 +1,10 @@
+category: Libs
+requires: cygwin libglib2.0_0 libgstreamer1.0_0 libnice10
+sdesc: "GLib-based ICE library"
+ldesc: "Libnice is an implementation of the IETF's draft Interactive
+Connectivity Establishment standard (ICE). It provides GLib-based library,
+libnice and GStreamer elements. ICE is useful for applications that want to
+establish peer-to-peer UDP data streams. It automates the process of traversing
+NATs and provides security against some attacks."
+external-source: libnice
+
